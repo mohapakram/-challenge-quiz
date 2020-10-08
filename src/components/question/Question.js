@@ -1,39 +1,50 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Question.css'
 import QuestionHeader from '../questionHeader/QuestionHeader'
 import decodeString from '../../utils/decodeString'
 
 export default Question
 
-function Question ({ question, currentQNumber, numberOfAllQ }) {
-  const answers = [
-    'Stan%20Lee',
-    'Malcolm%20Wheeler-Nicholson',
-    'Robert%20Crumb',
-    'Robert%20Kirkman'
-  ]
+function Question ({ question, position, goToNextQuestion }) {
+  const [ feedback, setFeedback ] = useState(undefined)
+  const [ isCorrectAnswer, setIsCorrectAnswer ] = useState(undefined)
+  const { difficulty, category } = question
+  const answers = [...question.incorrect_answers, question.correct_answer]
 
-  const testQuestionData =
-{
-  category: 'Entertainment%3A%20Video%20Games',
-  currentQNumber: 1,
-  numberOfAllQ: 20,
-  difficulty: 'medium'
-}
+  const validateAnswer = (answer) => {
+    setFeedback(answer === question.correct_answer ? 'correct answer!' : 'wrong answer..')
+    setIsCorrectAnswer(answer === question.correct_answer)
+  }
+
+  const renderNextQuestion = (feedback) => {
+    setFeedback(undefined)
+    goToNextQuestion(isCorrectAnswer)
+    setIsCorrectAnswer(undefined)
+  }
+
+  const renderFeedback = () => {
+    return (
+      <div>
+        <span>{feedback}</span>
+        <button onClick={renderNextQuestion}>next question</button>
+      </div>
+    )
+  }
 
   return (
     <div id='question'>
-      <QuestionHeader questionData={testQuestionData} />
+      <QuestionHeader difficulty={difficulty} category={category} position={position} />
       <div className='content'>
         {decodeString(question.question)}
       </div>
       <div className='answers-container'>
-        {answers.map(answer => (
-          <button className='answer'>
+        {answers.map((answer, i) => (
+          <button key={i} className='answer' disabled={feedback} onClick={() => validateAnswer(answer)}>
             {decodeString(answer)}
           </button>
         ))}
       </div>
+      {feedback && renderFeedback()}
     </div>
   )
 }
