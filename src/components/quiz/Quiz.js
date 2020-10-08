@@ -23,13 +23,10 @@ function Quiz () {
     setState({ ...state, currentQuestionIndex: currentQuestionIndex + 1, currentQuestion: questions[currentQuestionIndex + 1] })
   }
 
-  const validateAnswer = () => {
-    goToNextQuestion()
-  }
   return (
     <>
       <ProgressBar width='10%' />
-      <Question question={currentQuestion} position={{ currentQuestionIndex, questionsLength }} onSelect={validateAnswer} />
+      <Question question={currentQuestion} position={{ currentQuestionIndex, questionsLength }} goToNextQuestion={goToNextQuestion} />
       <ScoreBar score='50%' minScore='10%' maxScore='80%' />
     </>
   )
