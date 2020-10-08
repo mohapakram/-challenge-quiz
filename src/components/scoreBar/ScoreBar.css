@@ -1,0 +1,35 @@
+#score-bar {
+  position: absolute;
+  bottom: 5px;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#score-bar .max-score {
+  float: right;
+}
+
+#score-bar .representation-bar {
+  border: 1px solid gray;
+  height: 25px;
+}
+
+#score-bar .representation-bar * {
+  height: 25px;
+  position: absolute;
+}
+
+#score-bar .representation-bar #represent-max-score {
+  background-color: red;
+}
+
+#score-bar .representation-bar #represent-score {
+  background-color: gray;
+}
+
+#score-bar .representation-bar #represent-min-score {
+  background-color: black;
+}
