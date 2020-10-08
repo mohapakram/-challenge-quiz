@@ -6,7 +6,7 @@ import decodeString from '../../utils/decodeString'
 export default Question
 
 function Question ({ question, position, goToNextQuestion }) {
-  const [ feedback , setFeedback ] = useState(undefined)
+  const [ feedback, setFeedback ] = useState(undefined)
   const { difficulty, category } = question
   const answers = [...question.incorrect_answers, question.correct_answer]
 
