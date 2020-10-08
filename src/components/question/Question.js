@@ -14,6 +14,20 @@ function Question ({ question, position, goToNextQuestion }) {
     setFeedback(answer === question.correct_answer ? 'correct answer!' : 'wrong answer..')
   }
 
+  const renderNextQuestion = () => {
+    setFeedback(undefined)
+    goToNextQuestion()
+  }
+
+  const renderFeedback = () => {
+    return (
+      <div>
+        <span>{feedback}</span>
+        <button onClick={renderNextQuestion}>next question</button>
+      </div>
+    )
+  }
+
   return (
     <div id='question'>
       <QuestionHeader difficulty={difficulty} category={category} position={position} />
@@ -22,12 +36,12 @@ function Question ({ question, position, goToNextQuestion }) {
       </div>
       <div className='answers-container'>
         {answers.map((answer, i) => (
-          <button key={i} className='answer' onClick={() => validateAnswer(answer)}>
+          <button key={i} className='answer' disabled={feedback} onClick={() => validateAnswer(answer)}>
             {decodeString(answer)}
           </button>
         ))}
       </div>
-      {feedback && <div> {feedback} </div> }
+      {feedback && renderFeedback()}
     </div>
   )
 }

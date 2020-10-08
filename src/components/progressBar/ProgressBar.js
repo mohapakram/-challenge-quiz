@@ -1,4 +1,4 @@
 import React from 'react'
 import './ProgressBar.css'
 
-export default ({ width }) => <div id='progress-bar' style={{ width }} />
+export default ({ progress }) => <div id='progress-bar' style={{ width: `${progress}%` }} />
