@@ -1,0 +1,9 @@
+#hello-screen{
+    width:50%;
+    margin:10% auto;
+    text-align: center;
+}
+
+#hello-screen button{
+    padding:10px;
+}
