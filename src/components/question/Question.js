@@ -7,16 +7,19 @@ export default Question
 
 function Question ({ question, position, goToNextQuestion }) {
   const [ feedback, setFeedback ] = useState(undefined)
+  const [ isCorrectAnswer, setIsCorrectAnswer ] = useState(undefined)
   const { difficulty, category } = question
   const answers = [...question.incorrect_answers, question.correct_answer]
 
   const validateAnswer = (answer) => {
     setFeedback(answer === question.correct_answer ? 'correct answer!' : 'wrong answer..')
+    setIsCorrectAnswer(answer === question.correct_answer)
   }
 
-  const renderNextQuestion = () => {
+  const renderNextQuestion = (feedback) => {
     setFeedback(undefined)
-    goToNextQuestion()
+    goToNextQuestion(isCorrectAnswer)
+    setIsCorrectAnswer(undefined)
   }
 
   const renderFeedback = () => {
