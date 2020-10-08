@@ -3,7 +3,9 @@ import './ScoreBar.css'
 
 export default ScoreBar
 
-function ScoreBar ({ score, maxScore, minScore }) {
+function ScoreBar ({ scores }) {
+  const { score, minScore, maxScore } = scores
+
   return (
     <div id='score-bar'>
       <span className='score'>score:{score}%</span>
