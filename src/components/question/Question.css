@@ -1,0 +1,19 @@
+#question {
+    margin:10% auto;
+    width:50%;
+}
+
+#question .content{
+  font-size: 1.5em;
+}
+
+#question .answers-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin:15px 0;
+}
+
+#question .answer{
+    padding:5px;
+}

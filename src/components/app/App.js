@@ -2,24 +2,19 @@ import React from 'react'
 import './App.css'
 import ProgressBar from '../progressBar/ProgressBar'
 import ScoreBar from '../scoreBar/ScoreBar'
-import QuestionHeader from '../questionHeader/QuestionHeader'
+import Question from '../question/Question'
 
 export default App
 
-const testQuestionData =
-{
-  category: 'Entertainment%3A%20Video%20Games',
-  currentQNumber: 1,
-  numberOfAllQ: 20,
-  difficulty: 'medium'
-}
-
 function App () {
+  const testQuestion = {
+    question: 'Who%20is%20the%20creator%20of%20the%20comic%20series%20%22The%20Walking%20Dead%22%3F'
+  }
+
   return (
     <>
       <ProgressBar width='10%' />
-      <h1>Hello</h1>
-      <QuestionHeader questionData={testQuestionData} />
+      <Question question={testQuestion} />
       <ScoreBar score='50%' minScore='10%' maxScore='80%' />
     </>
   )
