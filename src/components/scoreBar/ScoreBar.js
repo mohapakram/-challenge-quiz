@@ -11,7 +11,7 @@ function ScoreBar ({ score, maxScore, minScore }) {
       <div className='representation-bar'>
         <div id='represent-max-score' style={{ width: `${maxScore}%` }} />
         <div id='represent-score' style={{ width: `${score}%` }} />
-        <div id='represent-min-score' style={{ width: minScore }} />
+        <div id='represent-min-score' style={{ width: `${minScore}%` }} />
       </div>
     </div>
   )

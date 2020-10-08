@@ -19,7 +19,7 @@ function Quiz () {
     wrongAnswers: 0
   })
 
-  const { currentQuestionIndex, questionsLength, currentQuestion, progress, wrongAnswers, correctAnswers, score, maxScore } = state
+  const { currentQuestionIndex, questionsLength, currentQuestion, progress, wrongAnswers, correctAnswers, score, maxScore, minScore } = state
 
   const calcProgress = () => {
     return ((currentQuestionIndex + 1) / questionsLength) * 100
@@ -30,8 +30,9 @@ function Quiz () {
     let nextQuestions = questions[nextQuestionIndex]
     const calcWrongAnswers = () => isCorrectAnswer ? wrongAnswers : wrongAnswers + 1
     const calcCorrectAnswers = () => isCorrectAnswer ? correctAnswers + 1 : correctAnswers
-    const calcScore = () => (calcCorrectAnswers() / nextQuestionIndex) * 100
+    const calcScore = () => Math.round((calcCorrectAnswers() / nextQuestionIndex) * 100)
     const calcMaxScore = () => (((questions.length - nextQuestionIndex) + calcCorrectAnswers()) / questions.length) * 100
+    const calcMinScore = () => (calcCorrectAnswers() / questions.length) * 100
     setState({ ...state,
       currentQuestionIndex: nextQuestionIndex,
       currentQuestion: nextQuestions,
@@ -39,7 +40,8 @@ function Quiz () {
       wrongAnswers: calcWrongAnswers(),
       correctAnswers: calcCorrectAnswers(),
       score: calcScore(),
-      maxScore: calcMaxScore()
+      maxScore: calcMaxScore(),
+      minScore: calcMinScore()
     })
   }
 
@@ -47,7 +49,7 @@ function Quiz () {
     <>
       <ProgressBar progress={progress} />
       <Question question={currentQuestion} position={{ currentQuestionIndex, questionsLength }} goToNextQuestion={goToNextQuestion} />
-      <ScoreBar score={score} minScore='10%' maxScore={maxScore} />
+      <ScoreBar score={score} minScore={minScore} maxScore={maxScore} />
     </>
   )
 }
