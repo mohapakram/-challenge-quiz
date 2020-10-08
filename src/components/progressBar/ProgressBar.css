@@ -1,0 +1,6 @@
+#progress-bar{
+    position: absolute;
+    top:5px;
+    background-color:gray;
+    height: 15px;
+}
