@@ -5,31 +5,18 @@ import decodeString from '../../utils/decodeString'
 
 export default Question
 
-function Question ({ question, currentQNumber, numberOfAllQ }) {
-  const answers = [
-    'Stan%20Lee',
-    'Malcolm%20Wheeler-Nicholson',
-    'Robert%20Crumb',
-    'Robert%20Kirkman'
-  ]
-
-  const testQuestionData =
-{
-  category: 'Entertainment%3A%20Video%20Games',
-  currentQNumber: 1,
-  numberOfAllQ: 20,
-  difficulty: 'medium'
-}
-
+function Question ({ question, position, onSelect }) {
+  const { difficulty, category } = question
+  const answers = [...question.incorrect_answers, question.correct_answer]
   return (
     <div id='question'>
-      <QuestionHeader questionData={testQuestionData} />
+      <QuestionHeader difficulty={difficulty} category={category} position={position} />
       <div className='content'>
         {decodeString(question.question)}
       </div>
       <div className='answers-container'>
-        {answers.map(answer => (
-          <button className='answer'>
+        {answers.map((answer, i) => (
+          <button key={i} className='answer' onClick={onSelect}>
             {decodeString(answer)}
           </button>
         ))}

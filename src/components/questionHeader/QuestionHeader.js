@@ -4,11 +4,11 @@ import decodeString from '../../utils/decodeString'
 import displayDifficulty from '../../utils/displayDifficulty'
 export default QuestionHeader
 
-function QuestionHeader ({ questionData }) {
-  const { currentQNumber, numberOfAllQ, difficulty, category } = questionData
+function QuestionHeader ({ difficulty, category, position }) {
+  const { currentQuestionIndex, questionsLength } = position
   return (
     <div id='question-header'>
-      <h1>question {currentQNumber} of {numberOfAllQ} </h1>
+      <h1>question { currentQuestionIndex + 1 } of {questionsLength} </h1>
       <span>{decodeString(category)}</span>
       <span>{displayDifficulty(difficulty)}</span>
     </div>
