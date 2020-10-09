@@ -47,7 +47,7 @@ function Quiz () {
       currentQuestionIndex: nextState.currentQuestionIndex,
       currentQuestion: questions[nextState.currentQuestionIndex],
       progress: calcProgress(currentQuestionIndex, questionsLength),
-      answers:{
+      answers: {
         wrongAnswers: calcWrongAnswers(isCorrectAnswer, wrongAnswers),
         correctAnswers: nextState.correctAnswers
       },
