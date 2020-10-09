@@ -31,6 +31,8 @@ function Question ({ question, position, goToNextQuestion }) {
     )
   }
 
+  const colorAnswer = (answer) => answer === question.correct_answer ? 'answer correct' : 'answer incorrect'
+
   return (
     <div id='question'>
       <QuestionHeader difficulty={difficulty} category={category} position={position} />
@@ -39,7 +41,7 @@ function Question ({ question, position, goToNextQuestion }) {
       </div>
       <div className='answers-container'>
         {answers.map((answer, i) => (
-          <button key={i} className='answer' disabled={feedback} onClick={() => validateAnswer(answer)}>
+          <button key={i} className={feedback ? colorAnswer(answer) : 'answer'} disabled={feedback} onClick={() => validateAnswer(answer)}>
             {decodeString(answer)}
           </button>
         ))}

@@ -18,6 +18,13 @@
     padding:5px;
 }
 
+.correct {
+    background-color: #4CAF50;
+}
+  
+.incorrect {
+    background-color: #E91E63;
+}
 
 #feedback {
     font-size: 1.2em;
