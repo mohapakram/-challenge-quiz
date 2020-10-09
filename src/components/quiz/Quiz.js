@@ -4,6 +4,7 @@ import ScoreBar from '../scoreBar/ScoreBar'
 import Question from '../question/Question'
 import questions from '../../assets/questions.json'
 import calculations from '../../utils/calculations/calculations'
+import shuffleArray from '../../utils/shuffleArray/shuffleArray'
 
 export default Quiz
 
@@ -43,8 +44,6 @@ function Quiz ({ endQuiz }) {
       correctAnswers: calcCorrectAnswers(isCorrectAnswer, correctAnswers)
     }
 
-    console.log(calcCorrectAnswers(isCorrectAnswer, correctAnswers))
-
     setState({ ...state,
       currentQuestionIndex: nextState.currentQuestionIndex,
       currentQuestion: questions[nextState.currentQuestionIndex],
@@ -64,7 +63,10 @@ function Quiz ({ endQuiz }) {
   return (
     <>
       <ProgressBar progress={progress} />
-      <Question question={currentQuestion} position={{ currentQuestionIndex, questionsLength }} goToNextQuestion={goToNextQuestion} />
+      <Question question={currentQuestion}
+        position={{ currentQuestionIndex, questionsLength }}
+        goToNextQuestion={goToNextQuestion}
+        answers={shuffleArray([...currentQuestion.incorrect_answers, currentQuestion.correct_answer])} />
       <ScoreBar scores={scores} />
     </>
   )

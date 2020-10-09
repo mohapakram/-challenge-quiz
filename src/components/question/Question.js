@@ -2,14 +2,13 @@ import React, { useState } from 'react'
 import './Question.css'
 import QuestionHeader from '../questionHeader/QuestionHeader'
 import decodeString from '../../utils/decodeString/decodeString'
-import shuffleArray from '../../utils/shuffleArray/shuffleArray'
 export default Question
 
-function Question ({ question, position, goToNextQuestion }) {
+function Question ({ question, position, goToNextQuestion, answers }) {
   const [ feedback, setFeedback ] = useState(undefined)
   const [ isCorrectAnswer, setIsCorrectAnswer ] = useState(undefined)
+  const [ selectedAnswer, setSelectedAnswer ] = useState(undefined)
   const { difficulty, category } = question
-  const answers = [...question.incorrect_answers, question.correct_answer]
 
   const renderNextQuestion = (feedback) => {
     setFeedback(undefined)
@@ -21,22 +20,23 @@ function Question ({ question, position, goToNextQuestion }) {
     {decodeString(question.question)}
   </div>
 
+  const validateAnswer = (answer) => {
+    setSelectedAnswer(answer)
+    setFeedback(answer === question.correct_answer ? 'correct answer!' : 'wrong answer..')
+    setIsCorrectAnswer(answer === question.correct_answer)
+  }
+
+  const colorAnswer = (answer) => answer === question.correct_answer ? 'answer correct' : answer === selectedAnswer ? 'answer incorrect' : 'answer'
+
   const renderAnswers = () => (
     <div className='answers-container'>
-      {shuffleArray(answers).map((answer, i) => (
+      {answers.map((answer, i) => (
         <button key={i} className={feedback ? colorAnswer(answer) : 'answer'} disabled={feedback} onClick={() => validateAnswer(answer)}>
           {decodeString(answer)}
         </button>
       ))}
     </div>
   )
-
-  const validateAnswer = (answer) => {
-    setFeedback(answer === question.correct_answer ? 'correct answer!' : 'wrong answer..')
-    setIsCorrectAnswer(answer === question.correct_answer)
-  }
-
-  const colorAnswer = (answer) => answer === question.correct_answer ? 'answer correct' : 'answer incorrect'
 
   const renderFeedback = () => {
     return (
