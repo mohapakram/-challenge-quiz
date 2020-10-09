@@ -14,7 +14,6 @@ body {
   text-transform: capitalize;
   font-size: 16px;
   font-family: 'Cairo', sans-serif;
-  overflow: hidden;
 }
 
 button{
