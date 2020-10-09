@@ -23,7 +23,7 @@
 }
 
 #score-bar .representation-bar #represent-max-score {
-  background-color: #FF5722;
+  background-color: #388E3C;
 }
 
 #score-bar .representation-bar #represent-score {
@@ -31,5 +31,5 @@
 }
 
 #score-bar .representation-bar #represent-min-score {
-  background-color: #FF4081;
+  background-color: #D32F2F;
 }
