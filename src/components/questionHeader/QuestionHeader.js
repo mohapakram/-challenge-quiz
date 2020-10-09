@@ -1,7 +1,8 @@
 import React from 'react'
 import './QuestionHeader.css'
-import decodeString from '../../utils/decodeString'
-import displayDifficulty from '../../utils/displayDifficulty'
+import decodeString from '../../utils/decodeString/decodeString'
+import displayDifficulty from '../../utils/displayDifficulty/displayDifficulty'
+
 export default QuestionHeader
 
 function QuestionHeader ({ difficulty, category, position }) {

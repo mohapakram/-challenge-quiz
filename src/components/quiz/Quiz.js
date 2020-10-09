@@ -3,7 +3,7 @@ import ProgressBar from '../progressBar/ProgressBar'
 import ScoreBar from '../scoreBar/ScoreBar'
 import Question from '../question/Question'
 import questions from '../../assets/questions.json'
-import calculations from '../../utils/calculations'
+import calculations from '../../utils/calculations/calculations'
 
 export default Quiz
 
@@ -15,7 +15,7 @@ const {
   calcMaxScore,
   calcMinScore } = calculations
 
-function Quiz () {
+function Quiz ({ endQuiz }) {
   const [ state, setState ] = useState({
     currentQuestionIndex: 0,
     currentQuestion: questions[0],
@@ -36,6 +36,8 @@ function Quiz () {
   const { correctAnswers, wrongAnswers } = answers
 
   const goToNextQuestion = (isCorrectAnswer) => {
+    if (currentQuestionIndex + 1 === questionsLength) endQuiz(scores.score)
+
     let nextState = {
       currentQuestionIndex: currentQuestionIndex + 1,
       correctAnswers: calcCorrectAnswers(isCorrectAnswer, correctAnswers)
@@ -47,7 +49,7 @@ function Quiz () {
       currentQuestionIndex: nextState.currentQuestionIndex,
       currentQuestion: questions[nextState.currentQuestionIndex],
       progress: calcProgress(currentQuestionIndex, questionsLength),
-      answers:{
+      answers: {
         wrongAnswers: calcWrongAnswers(isCorrectAnswer, wrongAnswers),
         correctAnswers: nextState.correctAnswers
       },

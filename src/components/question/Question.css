@@ -17,3 +17,27 @@
 #question .answer{
     padding:5px;
 }
+
+.correct {
+    background-color: #4CAF50;
+}
+  
+.incorrect {
+    background-color: #D32F2F;
+}
+
+#feedback {
+    font-size: 1.2em;
+    margin:15px auto;
+    width:20%;
+    text-align: center;
+}
+
+#feedback span {
+    display: block;
+}
+
+#feedback button{
+    padding: 10px 25px;
+}
+

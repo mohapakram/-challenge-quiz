@@ -6,6 +6,7 @@
   margin: 0 auto;
   left: 50%;
   transform: translate(-50%, -50%);
+  font-weight: bold;
 }
 
 #score-bar .max-score {
@@ -23,13 +24,13 @@
 }
 
 #score-bar .representation-bar #represent-max-score {
-  background-color: red;
+  background-color: #388E3C;
 }
 
 #score-bar .representation-bar #represent-score {
-  background-color: gray;
+  background-color: #009688;
 }
 
 #score-bar .representation-bar #represent-min-score {
-  background-color: black;
+  background-color: #D32F2F;
 }
