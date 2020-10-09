@@ -24,7 +24,7 @@ function calcScore (correctAnswers, nextQuestionIndex) {
 }
 
 function calcMaxScore (questionsLength, nextQuestionIndex, correctAnswers) {
-  return (((questionsLength - nextQuestionIndex) + correctAnswers) / questionsLength) * 100
+  return Math.round((((questionsLength - nextQuestionIndex) + correctAnswers) / questionsLength) * 100)
 }
 
 function calcMinScore (correctAnswers, questionsLength) {
