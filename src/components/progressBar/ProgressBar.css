@@ -4,4 +4,5 @@
     background-color:gray;
     height: 16px;
     background-color: #009688;
+    transition: all 1s ease;
 }
