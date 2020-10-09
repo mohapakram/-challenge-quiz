@@ -3,7 +3,7 @@ import ProgressBar from '../progressBar/ProgressBar'
 import ScoreBar from '../scoreBar/ScoreBar'
 import Question from '../question/Question'
 import questions from '../../assets/questions.json'
-import calculations from '../../utils/calculations'
+import calculations from '../../utils/calculations/calculations'
 
 export default Quiz
 
