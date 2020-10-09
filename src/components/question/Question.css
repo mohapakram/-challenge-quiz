@@ -1,6 +1,8 @@
 #question {
-    margin:10% auto;
-    width:50%;
+    margin:10vh 15px;
+    align-self: center;
+    width:60vw;
+    max-width:1000px;
 }
 
 #question .content{
@@ -29,7 +31,6 @@
 #feedback {
     font-size: 1.2em;
     margin:15px auto;
-    width:20%;
     text-align: center;
 }
 

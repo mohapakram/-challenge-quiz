@@ -61,13 +61,13 @@ function Quiz ({ endQuiz }) {
   }
 
   return (
-    <>
+    <div className='flex-container'>
       <ProgressBar progress={progress} />
       <Question question={currentQuestion}
         position={{ currentQuestionIndex, questionsLength }}
         goToNextQuestion={goToNextQuestion}
         answers={shuffleArray([...currentQuestion.incorrect_answers, currentQuestion.correct_answer])} />
       <ScoreBar scores={scores} />
-    </>
+    </div>
   )
 }

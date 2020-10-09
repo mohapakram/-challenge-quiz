@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;700;900&display=swap');
 
+#root{
+  height: 90vh;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -23,3 +27,9 @@ button{
   transition: all 0.3s ease;
 }
 
+.flex-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}

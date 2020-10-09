@@ -1,11 +1,8 @@
 #score-bar {
-  position: absolute;
-  bottom: 5px;
-  width: 50%;
-  height: 40px;
-  margin: 0 auto;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  width: 60vw;
+  max-width: 500px;
+  align-self: center;
+  position: relative;
   font-weight: bold;
 }
 
