@@ -16,3 +16,11 @@ button{
   font-size: 1em;
   text-transform: capitalize;
 }
+
+button.primary {
+  border:none;
+  outline:none;
+  background-color: #009688;
+  color:white;
+  border-radius: 15px;
+}
