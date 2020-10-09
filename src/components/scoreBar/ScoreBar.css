@@ -9,6 +9,10 @@
   font-weight: bold;
 }
 
+#score-bar * {
+  transition: all 1s ease;
+}
+
 #score-bar .max-score {
   float: right;
 }
