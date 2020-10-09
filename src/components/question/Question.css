@@ -17,3 +17,19 @@
 #question .answer{
     padding:5px;
 }
+
+
+#feedback {
+    font-size: 1.2em;
+    margin:15px auto;
+    width:20%;
+}
+
+#feedback span {
+    display: block;
+}
+
+#feedback button{
+    padding: 10px 25px;
+}
+

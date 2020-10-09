@@ -24,7 +24,7 @@ function Question ({ question, position, goToNextQuestion }) {
 
   const renderFeedback = () => {
     return (
-      <div>
+      <div id='feedback'>
         <span>{feedback}</span>
         <button onClick={renderNextQuestion}>next question</button>
       </div>
