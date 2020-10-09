@@ -23,13 +23,13 @@
 }
 
 #score-bar .representation-bar #represent-max-score {
-  background-color: red;
+  background-color: #FF5722;
 }
 
 #score-bar .representation-bar #represent-score {
-  background-color: gray;
+  background-color: #2196F3;
 }
 
 #score-bar .representation-bar #represent-min-score {
-  background-color: black;
+  background-color: #FF4081;
 }
