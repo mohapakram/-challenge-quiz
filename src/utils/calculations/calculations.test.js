@@ -41,3 +41,12 @@ describe('calcCorrectAnswers', () => {
   })
 }
 )
+
+describe('calcScore', () => {
+  it('successfully calculate the score', () => {
+    const calcScore = calculations.calcScore
+    const correctAnswers = 1
+    const nextQuestionIndex = 2
+    expect(calcScore(correctAnswers, nextQuestionIndex)).toEqual(50)
+  })
+})
