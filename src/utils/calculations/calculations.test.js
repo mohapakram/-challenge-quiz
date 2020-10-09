@@ -50,3 +50,13 @@ describe('calcScore', () => {
     expect(calcScore(correctAnswers, nextQuestionIndex)).toEqual(50)
   })
 })
+
+describe('calcMaxScore', () => {
+  it('successfully calculate the calcMaxScore', () => {
+    const calcMaxScore = calculations.calcMaxScore
+    const questionsLength = 20
+    const nextQuestionIndex = 1
+    const correctAnswers = 1
+    expect(calcMaxScore(questionsLength, nextQuestionIndex, correctAnswers)).toEqual(100)
+  })
+})
