@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import './Question.css'
 import QuestionHeader from '../questionHeader/QuestionHeader'
 import decodeString from '../../utils/decodeString'
-
+import shuffleArray from '../../utils/shuffleArray'
 export default Question
 
 function Question ({ question, position, goToNextQuestion }) {
@@ -23,7 +23,7 @@ function Question ({ question, position, goToNextQuestion }) {
 
   const renderAnswers = () => (
     <div className='answers-container'>
-      {answers.map((answer, i) => (
+      {shuffleArray(answers).map((answer, i) => (
         <button key={i} className={feedback ? colorAnswer(answer) : 'answer'} disabled={feedback} onClick={() => validateAnswer(answer)}>
           {decodeString(answer)}
         </button>
