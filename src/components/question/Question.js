@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './Question.css'
 import QuestionHeader from '../questionHeader/QuestionHeader'
-import decodeString from '../../utils/decodeString'
+import decodeString from '../../utils/decodeString/decodeString'
 import shuffleArray from '../../utils/shuffleArray'
 export default Question
 
