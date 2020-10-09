@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import './App.css'
 import Quiz from '../quiz/Quiz'
 import HelloScreen from '../helloScreen/HelloScreen'
+import ScoreScreen from '../scoreScreen/ScoreScreen'
 
 export default App
 
@@ -27,7 +28,7 @@ function App () {
     case views.quiz:
       return <Quiz endQuiz={endQuiz} />
     case views.score:
-      return <h1>your score is {score}</h1>
+      return <ScoreScreen score={score} />
     default:
       return <HelloScreen onStart={startQuiz} />
   }
