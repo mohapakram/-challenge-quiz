@@ -60,3 +60,12 @@ describe('calcMaxScore', () => {
     expect(calcMaxScore(questionsLength, nextQuestionIndex, correctAnswers)).toEqual(100)
   })
 })
+
+describe('calcMinScore', () => {
+  it('successfully calculate the minimum score', () => {
+    const calcMinScore = calculations.calcMinScore
+    const questionsLength = 20
+    const correctAnswers = 1
+    expect(calcMinScore(correctAnswers, questionsLength)).toEqual(5)
+  })
+})
