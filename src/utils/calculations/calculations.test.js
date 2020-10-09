@@ -1,3 +1,4 @@
+/* eslint-disable */
 import calculations from './calculations'
 
 describe('calcProgress', () => {
@@ -52,7 +53,7 @@ describe('calcScore', () => {
 })
 
 describe('calcMaxScore', () => {
-  it('successfully calculate the calcMaxScore', () => {
+  it('successfully calculate the maximum score', () => {
     const calcMaxScore = calculations.calcMaxScore
     const questionsLength = 20
     const nextQuestionIndex = 1
