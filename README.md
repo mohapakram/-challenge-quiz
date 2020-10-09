@@ -4,7 +4,29 @@
 
 # Outlier Engineering React Quiz Challenge
 
-Quizes are common feature of our student-facing apps. Can you build a simple quiz interface with React while following [Outlier's best practices](https://github.com/outlier-org/onboarding/blob/master/README.md#engineering-onboarding-guide)?
+I made this app as solution to Outlier Engineering React Quiz Challenge
+
+## Screenshot
+
+![Screenshot](https://i.imgur.com/EYnAxKJ.png)
+
+## Live demo 
+
+[Live version on netlify](https://fizz-the-quiz.netlify.app/)
+
+## Instructions to get the app running
+
+1- clone this repo. 
+
+2- `cd` into the project folder
+
+3- run `npm install`
+
+4- run `npm start` to start the server then open your browser on `localhost:3000`
+
+## Testing 
+
+Just run `npm test` in the root folder of the project.
 
 ## The Challenge
 
@@ -22,15 +44,5 @@ Using the following wireframes, build a quiz interface. The questions are all in
 
 ![Score](https://raw.githubusercontent.com/outlier-org/challenge-quiz/master/docs/wire-score.png)
 
-## Instructions
 
-How to attempt this challenge:
-
-1) Create a new repo in your account and note the git url
-2) Clone this repo
-3) Solve the challenge
-4) Set your new repo as the origin: `git remote set-url origin ${your repo url}`
-5) Push your solution to your repo
-
-You must follow these steps for your solution to be accepted -- forks or other methods will not be considered.
 
