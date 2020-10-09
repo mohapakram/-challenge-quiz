@@ -26,7 +26,7 @@ function Question ({ question, position, goToNextQuestion, answers }) {
     setIsCorrectAnswer(answer === question.correct_answer)
   }
 
-  const colorAnswer = (answer) => answer === question.correct_answer ? 'answer correct' : answer === selectedAnswer ? 'answer incorrect' : 'answer'
+  const colorAnswer = (answer) => answer === question.correct_answer ? 'answer correct' : answer === selectedAnswer ? 'answer incorrect' : 'answer disabled'
 
   const renderAnswers = () => (
     <div className='answers-container'>
