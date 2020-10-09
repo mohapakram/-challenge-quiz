@@ -16,6 +16,11 @@ body {
 button{
   font-size: 1em;
   text-transform: capitalize;
+  border:none;
+  outline:none;
+  color:black;
+  border-radius: 15px;
+  transition: all 0.5s ease;
 }
 
 button.primary {
@@ -24,4 +29,9 @@ button.primary {
   background-color: #009688;
   color:white;
   border-radius: 15px;
+  transition: all 0.5s ease;
+}
+
+button:hover {
+  border-radius:0;
 }
